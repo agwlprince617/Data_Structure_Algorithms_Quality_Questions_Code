@@ -4,6 +4,7 @@ struct node{
     int data;
     struct node *next;
 }*first=NULL;
+
 void createLL(int arr[],int n){
     struct node *temp,*last;
     //First node
