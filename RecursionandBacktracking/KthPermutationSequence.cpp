@@ -1,6 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
+//Brute Force Recursion 
+//Time Complexity is O(n!*n) and Space Complexity is O(n!)
+   void getPermute(int ind,string s,vector<string> &ds,int n){
+        if(ind==n){
+            ds.push_back(s);
+            return;
+        }
+        for(int i=ind;i<n;i++){
+            swap(s[i],s[ind]);
+            getPermute(ind+1,s,ds,n);
+            swap(s[i],s[ind]);
+        }
+    }
+    
+    string getPermutation(int n, int k) {
+        string s="";
+        for(int i=1;i<=n;i++){
+            s+=to_string(i);
+        }
+        vector<string> ds;
+        getPermute(0,s,ds,n);
+        sort(ds.begin(),ds.end());
+        return ds[k-1];
+    }
 
+
+
+//Time Complexity is O(n*n) and Space Complexity is O(n)
  string getPermutation(int n, int k) {
         string res="";
         int fact=1;
