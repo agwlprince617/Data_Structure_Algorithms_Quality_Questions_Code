@@ -13,7 +13,7 @@ using namespace std;
             Node *node=it.first;
             int line=it.second;
             q.pop();
-            if(m.find(line)==m.end()) m[line]=node->data;
+            m[line]=node->data;
             if(node->left) q.push({node->left,line-1});
             if(node->right) q.push({node->right,line+1});
         }

@@ -14,6 +14,6 @@ vector<int> leftView(Node *root)
 {
    // Your code here
     vector<int>v;
-        helper(root,0,v);
-        return v;
+    helper(root,0,v);
+    return v;
 }
