@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Using Hashing 
  void solve(int col,vector<string> &board,vector<vector<string>> &ans,
       vector<int> &leftRow,vector<int> &upperDiagonal,
                vector<int> &lowerDiagonal,int n){
