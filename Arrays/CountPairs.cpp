@@ -61,3 +61,7 @@ int main()
 	int K = 6;
 	cout << cntDisPairs(arr, K);
 }
+
+
+// COntiguous Subarray Sum
+// https://leetcode.com/problems/subarray-sum-equals-k/submissions/

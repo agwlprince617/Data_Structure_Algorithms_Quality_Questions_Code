@@ -47,7 +47,7 @@ long long trappingWater(int arr[], int n){
 
 
 //Efficient Sol
-//Time Complexity is O(n*2) and Space Complexity O(1)
+//Time Complexity is O(n) and Space Complexity O(1)
 
 long long trappingWater(int arr[], int n){
         // code here
