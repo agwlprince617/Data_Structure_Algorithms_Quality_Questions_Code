@@ -43,3 +43,20 @@ int isDuplicate(vector<int> &nums,int n){
 
    return slow;
 }
+
+
+
+//Time Complexity is O(n) and Space Complexity O(n)
+ int findDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        int ans;
+        unordered_set<int> s;
+        for(int i=0;i<n;i++){
+            if(s.find(nums[i])!=s.end()){
+                ans=nums[i];
+                break;
+            }
+            s.insert(nums[i]);
+        }
+        return ans;
+    }
