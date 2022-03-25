@@ -31,7 +31,7 @@ int height(Node* root){
         if(!root) return 0;
         int a=1+height(root->left)+height(root->right);
         int b=diameter(root->left);
-        int c=diameter(root->right);
+        int c=diameter(root->right);    
         int ans=max(a,max(b,c));
         return ans;
     }    
