@@ -6,8 +6,8 @@ void rearrange(int arr[], int n)
 {
 	int j = 0;
 	for (int i = 0; i < n; i++) {
-		if (arr[i] < 0 and arr[i+1]>0) {
-			if (i != j)
+		if (arr[i] > 0 and arr[i+1]<0) {
+			if (i != j)2
 				swap(arr[i], arr[j]);
 			j++;
 		}

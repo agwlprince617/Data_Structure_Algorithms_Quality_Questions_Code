@@ -36,6 +36,7 @@ int isDuplicate(vector<int> &nums,int n){
    }while(slow!=fast);
 
     //Bring fast to the starting point and move them by one step fast and slow 
+   fast=nums[0];
    while(slow!=fast){
        slow=nums[slow];
        fast=nums[fast];

@@ -27,7 +27,7 @@ bool isTripletSum(int a[],int n,int x){
 
 //Efficient Sol
 //Time Complexity is O(n*2) and Space Complexity O(1)
-
+//Must be sorted
 bool isTripletSum(int a[],int n,int x){
    for(int i=0;i<n-2;i++){
        int start=i+1,end=n-1;

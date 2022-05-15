@@ -38,7 +38,7 @@ void reverseLL(node *curr){
         prev=curr;
         curr=next;
     }
-    head=prev;
+    head=prev; 
     displayLL(head);
 }
 

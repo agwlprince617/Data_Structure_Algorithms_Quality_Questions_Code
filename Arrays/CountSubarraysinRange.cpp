@@ -46,22 +46,19 @@ int countSubarray(int arr[],
 // sum in range [L, R] =  (number of subbarrays with the sum ≤ R) - (number of subarrays with sum ≤ L-1).
 //Optimal
 class Solution { 
-   long countSubarray(int N,int A[],long L,long R) {
-       return count(A, R) - count(A, L-1);
-   }
-   
-   // number of subarrays with sum <= limit
-   private long count(int[] A, long limit){
-       int i = 0, j = 0;
-       long sum = 0, ans = 0;
-       while(j < A.length){
-           sum += A[j];
-           //if sum>limit we need to decrement the sum by moving i forward
-           while(sum > limit) sum -= A[i++];       
-           //Since zero based index 
-           ans += j - i + 1;
-           j++;
-       }
-       return ans;
-   }
+  long long countSubarray(int N,vector<int> A,long long L,long long R) {
+        // code here
+         return count(A,R)-count(A,L-1);
+    }
+    
+    long long count(vector<int> arr,long long target){
+        long long i=0,j=0,ans=0,sum=0;
+        while(j<arr.size()){
+            sum+=arr[j];
+            while(sum>target) sum-=arr[i++];
+             ans+=j-i+1;
+             j++;
+        }
+        return ans;
+    }
 };
