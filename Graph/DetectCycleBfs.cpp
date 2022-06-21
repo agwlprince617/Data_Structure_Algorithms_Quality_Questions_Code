@@ -43,7 +43,7 @@ bool checkforCycle(int a,vector<int> adj[],int V,vector<int> &vis){
           if(!vis[it]){
               if(checkforCycle(it,adj,node,vis)) return true;
           }
-          else if(it!=par) return true;
+          else if(it!=par) return true;  
       }
       return false;
     }
