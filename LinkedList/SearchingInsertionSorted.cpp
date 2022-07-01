@@ -57,6 +57,29 @@ void InsertSorted(node *p,int x){
         }
     } 
 }
+
+void InsertLL(int x,int pos){
+    node *temp;
+    temp=new node;
+    temp->data=x;
+    temp->next=NULL;
+    if(pos==1){
+        temp->next=first;
+        first=temp;
+    }
+    else{
+        node *p=first;
+        for(int i=1;i<pos-1;i++){
+            p=p->next;
+        }
+        if(p){ //Important Condition if p points to some node or not
+            temp->next=p->next;
+             p->next=temp;
+        }
+        
+    }
+}
+
 int main(){
     int n;
     cin>>n;
@@ -65,11 +88,15 @@ int main(){
     createLL(arr,n);
     display(first);
     int ele;
-    cout<<"\nEnter element to be searched\n";
+    // cout<<"\nEnter element to be searched\n";
+    // cin>>ele;
+    // cout<<searchLL(first,ele)<<"\n";
+    cout<<"\nEnter the element to be inserted\n";
     cin>>ele;
-    cout<<searchLL(first,ele)<<"\n";
-    cout<<"Enter the element to be inserted\n";
-    cin>>ele;
-    InsertSorted(first,ele);
+    int pos;
+    cout<<"Enter the position to be inserted\n";
+    cin>>pos;
+    InsertLL(ele,pos);
+    // InsertSorted(first,ele);
     display(first);
 }
