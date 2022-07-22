@@ -51,3 +51,25 @@ public:
 
 
 // Time Complexity: O(N) Space Complexity: O(1)
+
+
+//CountZeroes
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> ans;
+        unordered_map<int,int> mpp;
+        for(int i=0;i<nums.size();i++){
+            if(mpp.find(target-nums[i])!=mpp.end()){
+                ans.push_back(mpp[target-nums[i]]);
+                ans.push_back(i);
+            }
+            mpp[nums[i]]=i;
+        }
+        return ans;
+    }
+};
+
+// Input: nums = [0,1,0,3,12]
+// Output: [1,3,12,0,0]
