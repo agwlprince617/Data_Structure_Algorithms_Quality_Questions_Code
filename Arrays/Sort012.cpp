@@ -53,7 +53,7 @@ public:
 // Time Complexity: O(N) Space Complexity: O(1)
 
 
-//CountZeroes
+//Two Sum
 
 class Solution {
 public:

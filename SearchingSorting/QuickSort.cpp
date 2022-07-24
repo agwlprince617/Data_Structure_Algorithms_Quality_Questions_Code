@@ -13,9 +13,11 @@ class Solution
         quickSort(arr,p+1,high);
     }
     public:
+    //Hoares Partition Algorithm
     int partition (int arr[], int low, int high)
     {
        // Your code here
+       
        int i=low-1,j=high+1;int p = arr[low];
        while(true){
            do{
