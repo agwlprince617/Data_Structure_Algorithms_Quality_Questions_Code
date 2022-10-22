@@ -42,7 +42,7 @@ public:
             cnt--;
         }
         t->next=t->next->next;
-        return head;
+        return head; 
     
         }
 };

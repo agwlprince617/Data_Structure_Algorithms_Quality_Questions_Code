@@ -50,3 +50,6 @@ public:
         return ans;
     }
 };
+
+//PreOrder root,left,right
+//Podtorder right,left,root

@@ -7,7 +7,7 @@ class Solution
    void quickSort(int arr[], int low, int high)
     {
         // code here
-        if(low>=high)return;
+        if(low>=high) return;
         int p = partition(arr,low,high);
         quickSort(arr,low,p);
         quickSort(arr,p+1,high);
@@ -27,7 +27,7 @@ class Solution
            do{
                j--;
            }while(arr[j]>p);
-           if(i>=j)return j;
+           if(i>=j) return j;
           swap(arr[i],arr[j]);
        }
        return j;

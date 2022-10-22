@@ -21,7 +21,7 @@ int main(){
     for(int i=0;i<n;i++)  cout<<arr[i]<<" ";
 }
 
-
+//Ok is for checking descending order sorted array agar ek loop mein koi swaps nahi hua then come out of the loop
 //Time Complexity is O(n*2) in worst case when the array is reverse sorted and O(n) when the array is sorted
 // and Space Complexity O(1) coz inplace sorting
 //Inner Loops runs for n-i-1 coz in one loop the maximum element takes its place so after every ith loop we can decrement in jth loop

@@ -6,12 +6,11 @@ bool checkCycle(int node,vector<int> adj[],vector<int> &vis){
         
         for(auto it:adj[node]){
             if(!vis[it]){
-                vis[it]=1;
                 if(checkCycle(it,adj,vis)) return true;
             }
             else if(vis[it]==1) return true;
         }
-        //After completing the for loop if it cannot find that means it ahs completed
+        //After completing the for loop if it cannot find that means it has completed
         //the dfs loop and then we mark it as 2
         vis[node]=2;
         return false;

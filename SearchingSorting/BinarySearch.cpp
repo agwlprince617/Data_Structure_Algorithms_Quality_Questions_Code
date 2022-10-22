@@ -34,3 +34,38 @@ void Binary_Search(){
 int main(){
    Binary_Search();
 }
+
+//First and last Occurence
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        
+        int n=nums.size();
+
+        //First Occurence
+        int l=0,r=n-1;
+        int lind=-1,rind=-1;
+        while(l<=r){
+            int mid=(l+r)/2;
+            if(nums[mid]==target){
+               lind=mid;
+               r=mid-1;
+            }
+            else if(nums[mid]<target) l=mid+1;
+            else r=mid-1;
+        }
+
+        //Second OCcurence
+        l=0; r=n-1;
+         while(l<=r){
+            int mid=(l+r)/2;
+            if(nums[mid]==target){
+                rind=mid;
+                l=mid+1;
+            }
+            else if(nums[mid]<target) l=mid+1;
+            else r=mid-1;
+        }
+        return {lind,rind};
+    }
+};

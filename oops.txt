@@ -1,0 +1,258 @@
+//Creating a Class
+
+//Implement a class
+class Television{
+private int channel;
+private int changevolume;
+public void changechannel(){}
+}
+
+
+psv main(){
+Television t=new Television();
+t.changechannel()
+}
+
+//Creating a constructor -> Automatically Created when we create an object
+
+psv main(){
+    Rectangle r=new Rectangle();
+    Rectangle r=new Rectangle(10,5);
+}
+
+class Rectangle{
+    private int length;
+    private int breadth;
+    public Rectangle(){
+        length=l; breadth=l;
+    }------------------
+    public Rectangle(int l,int b){
+        length=l;
+        breadth=b;
+    }
+}
+
+Features of Java
+------------------
+
+Polymorphism -> Ability to present the same interface for different underlying forms
+
+Method Overloading (Compile Time)
+It allows us to write the same method in the main with different parameters.
+
+public class MethodOverloading {
+	
+	// 1 parameter-------
+	void show(int num1)
+	{
+		System.out.println("number 1 : " + num1);
+	}
+
+	// 2 parameter
+	void show(int num1, int num2)
+	{
+		System.out.println("number 1 : " + num1
+						+ " number 2 : " + num2);
+	}
+
+	public static void main(String[] args)
+	{
+		MethodOverloading obj = new MethodOverloading();
+	
+		// 1st show function
+		obj.show(3);
+	
+		// 2nd show function
+		obj.show(4, 5);
+	}
+}
+
+**Method overloading does not allow changing the return type of method( function ); it occurs ambiguity.
+
+//Operator Overloading
+// Java program to demonstrate the
+// working of operator overloading
+
+public class GFG {
+
+	// function for adding two integers
+	void add(int a, int b)
+	{
+		int sum = a + b;
+		System.out.println(" Addition of two integer :"
+						+ sum);
+	}
+
+	// function for concatenating two strings
+	void add(String s1, String s2)
+	{
+		String con_str = s1 + s2;
+		System.out.println("Concatenated strings :"
+						+ con_str);
+	}
+
+	public static void main(String args[])
+	{
+		GFG obj = new GFG();
+	
+		// addition of two numbers
+		obj.add(10, 10);
+	
+		// concatenation of two string
+		obj.add("Operator ", " overloading ");
+	}
+}
+
+
+Advantages of Compile-time Polymorphism:
+It improves code clarity and allows for the use of a single name for similar procedures.
+It has a faster execution time since it is discovered early in the compilation process.
+Cons
+The only disadvantage of compile-time polymorphism is that it doesn’t include inheritance.
+
+
+//Method Overiding (Runtime Polymorphism)
+If the subclass has the same method as parent class the subclass overides the method of the parent class
+In this example, we are creating two classes Bike and Splendor.
+Splendor class extends Bike class and overrides its run() method.
+We are calling the run method by the reference variable of Parent class. 
+Since it refers to the subclass object and subclass method overrides the Parent class method, 
+the subclass method is invoked at runtime.
+
+class Bike(){
+    void run()
+    S.O.P("Running");
+}
+
+class Splendor extends Bike(){
+    void run()
+    S.O.P("Bike is Running");
+}
+
+psv main(String args[]){
+    Bike b=new Splendor();
+    b.run();
+}
+
+The virtual table is a lookup table of functions used to resolve function calls in a dynamic/late binding manner.
+*__vPtr is set (automatically) when a class instance is created so that it points to the virtual table for that class.
+ *__vPtr is inherited by derived classes,
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Abstraction: Avoid showing internal details only show the required feature
+
+abstract class Car{
+    abstract void accelerate();
+}
+
+class Suzuki extends Class{
+    void accelerate(){
+        S.O.P("Running");
+    }
+}
+psv main(String args[]){
+    Car c=new Suzuki();
+    c.accelerate();
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Encapsulation-> Encapsulation is defined as the wrapping up of data under a single unit. 
+It is the mechanism that binds together code and the data.
+It is a way to achieve data hiding in Java because other class will not
+be able to access the data through the private data members.
+
+public class Student(){
+    private String name;
+    public String setName(String name){
+        this.name=name;
+    }
+    public String getName(String name){
+        return name;
+    }
+}
+
+psv main(String args[]){
+    Student s=new Student();
+    s.setName("Vijay")
+    S.O.P(s.getName());
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Inheritance- Acquiring the features of existing class and adding new features and create a new class
+Types-> Single,Multilevel,Heirarchical,Hybrid
+
+Single
+
+class Circle{
+private int radius;
+public Circle(){
+radius=0;
+}
+public int area();
+}
+
+class Cylinder extends Circle{
+private int height;
+public Cylinder(){
+height=0;
+}
+public int volume(){
+    S.O.P(area*height)a
+}
+}
+
+
+psv main(){
+Circle c=new Circle();
+Cylinder c1=new Cylinder();
+}
+
+Previously we saw that the same method in the subclass overrides the method in superclass.
+
+In such a situation, the super keyword is used to call the method of the parent class from the method of the child class.
+
+MultiLevel:-In multilevel inheritance, a subclass extends from a superclass and then the same subclass acts as a superclass for another class
+
+class Sphere extends Cylinder{
+
+}
+
+Heirarchical -> In hierarchical inheritance, multiple subclasses extend from a single superclass
+
+In multiple inheritance, a single subclass extends from multiple superclasses.
+Java doesn't support multiple inheritance. However, we can achieve multiple inheritance using interfaces. 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+//Interface to achieve abstraction, blueprint of class
+special type of classes that contain methods but not their definition
+In abstract classes all the subclasses does not need to provide the definition of the abstract method,
+but in interface needs to provide for all the methods
+We can achieve multiple inheritance
+
+//Interface declaration: by first user  
+interface Drawable{  
+void draw();  
+}  
+//Implementation: by second user  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("drawing rectangle");}  
+}  
+class Circle implements Drawable{  
+public void draw(){System.out.println("drawing circle");}  
+}  
+//Using interface: by third user  
+class TestInterface1{  
+public static void main(String args[]){  
+Drawable d=new Circle();//In real scenario, object is provided by method e.g. getDrawable()  
+d.draw();  
+}}  
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
